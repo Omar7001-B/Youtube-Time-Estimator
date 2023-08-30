@@ -24,7 +24,7 @@
         const playerContent = document.querySelector("#movie_player > div.ytp-player-content.ytp-cultural-moment-player-content");
         const textElement = document.createElement('div');
         textElement.id = 'time-watched-preview';
-        textElement.textContent = 'Elapsed: 00:00:00, Speed: 0.00, Finish: 00:00:00';
+        textElement.textContent = 'Elapsed: 00:00:00, Speed: 0.00, Remaining: 00:00:00';
         textElement.style = `
             position: absolute;
             top: 10px;
@@ -91,7 +91,7 @@
             const expectedFinishTime = remainingVideoDuration / viewerSpeed;
 
             const previewElement = document.getElementById('time-watched-preview');
-            previewElement.textContent = `Elapsed: ${formatDurationFromSeconds(timeElapsed)}, Speed: ${viewerSpeed}, Finish: ${formatDurationFromSeconds(expectedFinishTime)}`;
+            previewElement.textContent = `Elapsed: ${formatDurationFromSeconds(timeElapsed)}, Speed: ${viewerSpeed}, Remaining: ${formatDurationFromSeconds(expectedFinishTime)}`;
         }
 
         updateTimeIntervalID = setInterval(updateExpectedFinishTime, 1000);
